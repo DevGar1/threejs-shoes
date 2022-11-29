@@ -1,11 +1,12 @@
 import { Header } from "../components";
+import { Gallery, Main } from "../models/home";
 
 const Home = () => {
   return (
     <main className="w-full h-screen">
       <Header />
-      <div className="h-[calc(50vh-28px)] "></div>
-      <div className="h-[calc(50vh-28px)] bg-blue-800">hola</div>
+      <Main />
+      <Gallery />
     </main>
   );
 };
