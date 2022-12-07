@@ -8,11 +8,12 @@ function App() {
     
   }
   return (
-    <div className="App">
+    <div className="App relative">
       <Router />
       {/* <header className="w-full h-screen flex justify-center items-center text-2xl bg-slate-400 text-white">Hello World!</header>
       "Brown Sneakers" (https://skfb.ly/6RoKv) by yanix is licensed under Creative Commons Attribution
       (http://creativecommons.org/licenses/by/4.0/) */}
+  
     </div>
   );
 }

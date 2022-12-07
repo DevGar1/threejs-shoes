@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { images } from "../../assets/images";
+import { useAnimation } from "../../hooks";
 
 const Gallery = () => {
   const [index, setIndex] = useState(3);
-  const [gallery] = useState([images.Shoe, images.Shoe2, images.Shoe3, images.Shoe4]);
+  const isMounted = useAnimation(index > -1, 500);
+  const [gallery] = useState([
+    images.Shoe,
+    images.Shoe2,
+    images.Shoe3,
+    images.Shoe4,
+  ]);
   const changeGallery = (index: number) => {
     setIndex(index);
   };
@@ -14,10 +21,15 @@ const Gallery = () => {
       style={{ border: "0.3px solid rgba(0,0,0,0.3)" }}
     >
       <div className="w-full h-5/6 ">
-        <img src={gallery[index]} alt="Shoe" className="w-full object-cover" />
+        <div className={`w-full h-full `}>
+          <img
+            src={gallery[index]}
+            alt="Shoe"
+            className={`w-full object-cover image is ${isMounted && "mounted"}`}
+          />
+        </div>
       </div>
       <div className="w-full  h-1/6 flex justify-end gap-1  p-1">
-    
         <img
           src={images.Shoe2}
           alt="Shoe"
